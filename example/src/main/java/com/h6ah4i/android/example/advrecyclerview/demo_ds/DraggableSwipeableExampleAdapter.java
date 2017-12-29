@@ -188,6 +188,10 @@ class DraggableSwipeableExampleAdapter
         mProvider.moveItem(fromPosition, toPosition);
     }
 
+    @Override public void onMoveNone() {
+
+    }
+
     @Override
     public boolean onCheckCanStartDrag(MyViewHolder holder, int position, int x, int y) {
         // x, y --- relative from the itemView's top-left
@@ -212,7 +216,7 @@ class DraggableSwipeableExampleAdapter
     }
 
     @Override
-    public void onItemDragStarted(int position) {
+    public void onItemDragStarted(MyViewHolder holder, int position) {
         notifyDataSetChanged();
     }
 

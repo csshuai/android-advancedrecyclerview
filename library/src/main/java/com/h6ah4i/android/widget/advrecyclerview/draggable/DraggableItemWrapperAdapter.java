@@ -261,9 +261,11 @@ class DraggableItemWrapperAdapter<VH extends RecyclerView.ViewHolder> extends Si
     }
 
     // NOTE: This method is called from RecyclerViewDragDropManager
-    /*package*/ void onDragItemStarted() {
+    /*package*/
+    @SuppressWarnings("unchecked")
+    void onDragItemStarted(RecyclerView.ViewHolder holder, int position) {
         mCallingDragStarted = true;
-        mDraggableItemAdapter.onItemDragStarted(getDraggingItemInitialPosition());
+        mDraggableItemAdapter.onItemDragStarted(holder, position);
         mCallingDragStarted = false;
     }
 
@@ -288,9 +290,13 @@ class DraggableItemWrapperAdapter<VH extends RecyclerView.ViewHolder> extends Si
         mDraggingItemViewHolder = null;
         mDraggableItemAdapter = null;
 
-        if (result && (draggingItemCurrentPosition != draggingItemInitialPosition)) {
+        if (result) {
             // apply to wrapped adapter
-            draggableItemAdapter.onMoveItem(draggingItemInitialPosition, draggingItemCurrentPosition);
+            if (draggingItemCurrentPosition != draggingItemInitialPosition) {
+                draggableItemAdapter.onMoveItem(draggingItemInitialPosition, draggingItemCurrentPosition);
+            } else {
+                draggableItemAdapter.onMoveNone();
+            }
         }
 
         draggableItemAdapter.onItemDragFinished(draggingItemInitialPosition, draggingItemCurrentPosition, result);

@@ -484,7 +484,7 @@ class ExpandableRecyclerViewWrapperAdapter
     }
 
     @Override
-    public void onItemDragStarted(int position) {
+    public void onItemDragStarted(RecyclerView.ViewHolder holder, int position) {
         if (!(mExpandableItemAdapter instanceof ExpandableDraggableItemAdapter)) {
             return;
         }
@@ -664,6 +664,10 @@ class ExpandableRecyclerViewWrapperAdapter
         mSavedFromChildPosition = fromChildPosition;
         mSavedToGroupPosition = modToGroupPosition;
         mSavedToChildPosition = modToChildPosition;
+    }
+
+    @Override public void onMoveNone() {
+
     }
 
     @SuppressWarnings("unchecked")

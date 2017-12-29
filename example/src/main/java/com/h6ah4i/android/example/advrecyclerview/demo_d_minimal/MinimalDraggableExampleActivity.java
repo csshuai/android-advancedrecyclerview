@@ -122,6 +122,10 @@ public class MinimalDraggableExampleActivity extends AppCompatActivity {
             mItems.add(toPosition, movedItem);
         }
 
+        @Override public void onMoveNone() {
+
+        }
+
         @Override
         public boolean onCheckCanStartDrag(MyViewHolder holder, int position, int x, int y) {
             return true;
@@ -138,7 +142,7 @@ public class MinimalDraggableExampleActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onItemDragStarted(int position) {
+        public void onItemDragStarted(MyViewHolder holder, int position) {
         }
 
         @Override

@@ -104,6 +104,10 @@ class MyDraggableAdapter
         mItems.add(toPosition, movedItem);
     }
 
+    @Override public void onMoveNone() {
+
+    }
+
     @Override
     public boolean onCheckCanStartDrag(MyViewHolder holder, int position, int x, int y) {
         return ViewUtils.hitTest(holder.dragHandle, x, y);
@@ -120,7 +124,7 @@ class MyDraggableAdapter
     }
 
     @Override
-    public void onItemDragStarted(int position) {
+    public void onItemDragStarted(MyViewHolder holder, int position) {
         notifyDataSetChanged();
     }
 

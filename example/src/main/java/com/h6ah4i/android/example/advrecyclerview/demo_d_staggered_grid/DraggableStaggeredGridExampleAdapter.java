@@ -191,6 +191,10 @@ class DraggableStaggeredGridExampleAdapter
         mProvider.moveItem(fromPosition, toPosition);
     }
 
+    @Override public void onMoveNone() {
+
+    }
+
     @Override
     public boolean onCheckCanStartDrag(BaseViewHolder holder, int position, int x, int y) {
         return !isHeader(position);
@@ -208,7 +212,7 @@ class DraggableStaggeredGridExampleAdapter
     }
 
     @Override
-    public void onItemDragStarted(int position) {
+    public void onItemDragStarted(BaseViewHolder holder, int position) {
         notifyDataSetChanged();
     }
 

@@ -52,6 +52,11 @@ public interface DraggableItemAdapter<T extends RecyclerView.ViewHolder> {
     void onMoveItem(int fromPosition, int toPosition);
 
     /**
+     * Called when none is moved.
+     */
+    void onMoveNone();
+
+    /**
      * Called while dragging in order to check whether the dragging item can be dropped to the specified position.
      *
      * NOTE: This method will be called when the checkCanDrop option is enabled by {@link RecyclerViewDragDropManager#setCheckCanDropEnabled(boolean)}.
@@ -68,9 +73,10 @@ public interface DraggableItemAdapter<T extends RecyclerView.ViewHolder> {
      *
      * Call the {@link RecyclerView.Adapter#notifyDataSetChanged()} method in this callback to get the same behavior with v0.10.x or before.
      *
-     * @param position The position of the item.
+     * @param holder The dragging item.
+     * @param position The position of the item within the adapter's data set.
      */
-    void onItemDragStarted(int position);
+    void onItemDragStarted(T holder, int position);
 
     /**
      * Callback method to be invoked when finished dragging an item.

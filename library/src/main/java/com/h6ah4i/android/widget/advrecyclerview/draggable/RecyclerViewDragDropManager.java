@@ -784,11 +784,12 @@ public class RecyclerViewDragDropManager implements DraggableItemConstants {
             mEdgeEffectDecorator.reorderToTop();
         }
 
+        final int position = mWrapperAdapter.getDraggingItemInitialPosition();
         // raise onDragItemStarted() event
-        mWrapperAdapter.onDragItemStarted();
+        mWrapperAdapter.onDragItemStarted(holder, position);
 
         if (mItemDragEventListener != null) {
-            mItemDragEventListener.onItemDragStarted(mWrapperAdapter.getDraggingItemInitialPosition());
+            mItemDragEventListener.onItemDragStarted(position);
             mItemDragEventListener.onItemDragMoveDistanceUpdated(0, 0);
         }
     }

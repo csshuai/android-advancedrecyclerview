@@ -131,6 +131,10 @@ class DraggableGridExampleAdapter
         }
     }
 
+    @Override public void onMoveNone() {
+
+    }
+
     @Override
     public boolean onCheckCanStartDrag(MyViewHolder holder, int position, int x, int y) {
         return true;
@@ -148,7 +152,7 @@ class DraggableGridExampleAdapter
     }
 
     @Override
-    public void onItemDragStarted(int position) {
+    public void onItemDragStarted(MyViewHolder holder, int position) {
         notifyDataSetChanged();
     }
 
