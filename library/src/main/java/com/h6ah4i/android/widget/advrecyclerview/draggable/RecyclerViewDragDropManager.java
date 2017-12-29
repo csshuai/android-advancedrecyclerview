@@ -761,10 +761,10 @@ public class RecyclerViewDragDropManager implements DraggableItemConstants {
 
         startScrollOnDraggingProcess();
 
-        mWrapperAdapter.startDraggingItem(mDraggingItemInfo, holder, mDraggableRange, wrappedItemPosition, mCurrentItemMoveMode);
-
         // setup decorators
         mWrapperAdapter.onBindViewHolder(holder, wrappedItemPosition);
+
+        mWrapperAdapter.startDraggingItem(mDraggingItemInfo, holder, mDraggableRange, wrappedItemPosition, mCurrentItemMoveMode);
 
         mDraggingItemDecorator = new DraggingItemDecorator(mRecyclerView, holder, mRootDraggableRange);
         mDraggingItemDecorator.setShadowDrawable(mShadowDrawable);
