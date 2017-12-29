@@ -483,6 +483,10 @@ class ExpandableRecyclerViewWrapperAdapter
         }
     }
 
+    @Override public void onItemDragStarting(RecyclerView.ViewHolder holder, int position) {
+
+    }
+
     @Override
     public void onItemDragStarted(RecyclerView.ViewHolder holder, int position) {
         if (!(mExpandableItemAdapter instanceof ExpandableDraggableItemAdapter)) {

@@ -68,6 +68,8 @@ public interface DraggableItemAdapter<T extends RecyclerView.ViewHolder> {
      */
     boolean onCheckCanDrop(int draggingPosition, int dropPosition);
 
+    void onItemDragStarting(T holder, int position);
+
     /**
      * Callback method to be invoked when started dragging an item.
      *

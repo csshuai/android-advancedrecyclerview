@@ -141,6 +141,10 @@ public class MinimalDraggableExampleActivity extends AppCompatActivity {
             return true;
         }
 
+        @Override public void onItemDragStarting(MyViewHolder holder, int position) {
+
+        }
+
         @Override
         public void onItemDragStarted(MyViewHolder holder, int position) {
         }

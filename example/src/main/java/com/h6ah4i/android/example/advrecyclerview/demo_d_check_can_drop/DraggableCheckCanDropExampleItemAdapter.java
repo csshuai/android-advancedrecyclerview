@@ -149,6 +149,10 @@ class DraggableCheckCanDropExampleItemAdapter
         return (draggingPosition % 2) == (dropPosition % 2);
     }
 
+    @Override public void onItemDragStarting(MyViewHolder holder, int position) {
+
+    }
+
     @Override
     public void onItemDragStarted(MyViewHolder holder, int position) {
         notifyDataSetChanged();

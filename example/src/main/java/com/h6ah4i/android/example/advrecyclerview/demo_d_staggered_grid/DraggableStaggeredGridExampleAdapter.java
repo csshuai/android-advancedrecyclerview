@@ -211,6 +211,10 @@ class DraggableStaggeredGridExampleAdapter
         return true;
     }
 
+    @Override public void onItemDragStarting(BaseViewHolder holder, int position) {
+
+    }
+
     @Override
     public void onItemDragStarted(BaseViewHolder holder, int position) {
         notifyDataSetChanged();

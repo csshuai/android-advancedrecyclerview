@@ -234,7 +234,9 @@ class DraggableItemWrapperAdapter<VH extends RecyclerView.ViewHolder> extends Si
     }
 
     // NOTE: This method is called from RecyclerViewDragDropManager
-    /*package*/ void startDraggingItem(DraggingItemInfo draggingItemInfo, RecyclerView.ViewHolder holder, ItemDraggableRange range, int wrappedItemPosition, int itemMoveMode) {
+    /*package*/
+    @SuppressWarnings("unchecked")
+    void startDraggingItem(DraggingItemInfo draggingItemInfo, RecyclerView.ViewHolder holder, ItemDraggableRange range, int wrappedItemPosition, int itemMoveMode) {
         if (LOCAL_LOGD) {
             Log.d(TAG, "onDragItemStarted(holder = " + holder + ")");
         }
@@ -258,6 +260,7 @@ class DraggableItemWrapperAdapter<VH extends RecyclerView.ViewHolder> extends Si
         mDraggingItemViewHolder = holder;
         mDraggableRange = range;
         mItemMoveMode = itemMoveMode;
+        mDraggableItemAdapter.onItemDragStarting(holder, wrappedItemPosition);
     }
 
     // NOTE: This method is called from RecyclerViewDragDropManager
