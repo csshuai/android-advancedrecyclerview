@@ -670,7 +670,7 @@ class ExpandableRecyclerViewWrapperAdapter
         mSavedToChildPosition = modToChildPosition;
     }
 
-    @Override public void onMoveNone() {
+    @Override public void onMoveNone(int position) {
 
     }
 

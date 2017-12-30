@@ -188,7 +188,7 @@ class DraggableSwipeableExampleAdapter
         mProvider.moveItem(fromPosition, toPosition);
     }
 
-    @Override public void onMoveNone() {
+    @Override public void onMoveNone(int position) {
 
     }
 

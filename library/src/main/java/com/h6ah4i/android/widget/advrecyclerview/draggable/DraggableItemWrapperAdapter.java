@@ -298,7 +298,7 @@ class DraggableItemWrapperAdapter<VH extends RecyclerView.ViewHolder> extends Si
             if (draggingItemCurrentPosition != draggingItemInitialPosition) {
                 draggableItemAdapter.onMoveItem(draggingItemInitialPosition, draggingItemCurrentPosition);
             } else {
-                draggableItemAdapter.onMoveNone();
+                draggableItemAdapter.onMoveNone(draggingItemInitialPosition);
             }
         }
 

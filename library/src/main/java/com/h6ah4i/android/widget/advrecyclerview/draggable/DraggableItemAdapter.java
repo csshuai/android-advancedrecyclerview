@@ -54,7 +54,7 @@ public interface DraggableItemAdapter<T extends RecyclerView.ViewHolder> {
     /**
      * Called when none is moved.
      */
-    void onMoveNone();
+    void onMoveNone(int position);
 
     /**
      * Called while dragging in order to check whether the dragging item can be dropped to the specified position.

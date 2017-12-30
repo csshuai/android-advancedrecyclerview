@@ -131,7 +131,7 @@ class DraggableGridExampleAdapter
         }
     }
 
-    @Override public void onMoveNone() {
+    @Override public void onMoveNone(int position) {
 
     }
 
